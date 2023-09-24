@@ -1,6 +1,7 @@
 import express from 'express';
 import OpenAI from 'openai';
 import axios from 'axios';
+import cors from 'cors';
 const port = process.env.PORT || 8080;
 
 const client = new OpenAI({
@@ -9,6 +10,9 @@ const client = new OpenAI({
 
 // Create a new Express application 
 const app = express();
+
+// Enable CORS so that your API is accessible from the browser
+app.use(cors());
 
 app.use(express.json());
 
