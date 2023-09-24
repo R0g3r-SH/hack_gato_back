@@ -5,7 +5,8 @@ import cors from 'cors';
 const port = process.env.PORT || 8080;
 
 const client = new OpenAI({
-  apiKey: process.env.API_OPEN , // This is also the default, can be omitted
+ // apiKey: process.env.API_OPEN , // This is also the default, can be omitted
+ apiKey: "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", // This is also the default, can be omitted
 });
 
 // Create a new Express application 
@@ -194,6 +195,26 @@ app.post('/generate-class-v2', async (req, res) => {
 
 
 
+// Set up a route to interact with the OpenAI API
+app.post('/generate-chat', async (req, res) => {
+
+  const messages = req.body.messages
+ 
+  client.chat.completions.create({
+    model: "gpt-3.5-turbo",
+    messages: messages,
+
+  }).then((completion) => {
+    // Note the updated location for the response
+
+     res.send(completion.choices[0].message.content)
+  }).catch((error) => {
+    console.log(error);
+  });
+
+
+})
+
 
 
 
@@ -237,6 +258,9 @@ app.post('/generate-class-dummy', async (req, res) => {
   res.send(response)
 
 });
+
+
+
 
 
 
