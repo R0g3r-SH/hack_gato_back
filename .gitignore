@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+
+# Node.js dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+out/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# User-specific files
+.idea
+.vscode
+
+# Debug logs and crash reports
+npm-debug.log
+yarn-error.log
+
+# Editor-specific files
+*.swp
+*.swo
+
+# Dependency directories
+pnpm-lock.yaml
+yarn.lock
+
+# Optional: Uncomment this section if you're using TypeScript
+# TypeScript generated files
+# *.tsbuildinfo
