@@ -5,8 +5,8 @@ import cors from 'cors';
 const port = process.env.PORT || 8080;
 
 const client = new OpenAI({
- // apiKey: process.env.API_OPEN , // This is also the default, can be omitted
- apiKey: "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", // This is also the default, can be omitted
+ apiKey: process.env.API_OPEN , // This is also the default, can be omitted
+ //apiKey: "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", // This is also the default, can be omitted
 });
 
 // Create a new Express application 
